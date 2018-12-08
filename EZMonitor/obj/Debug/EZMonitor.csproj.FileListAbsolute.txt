@@ -1,0 +1,12 @@
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\EZMonitor.exe.config
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\EZMonitor.exe
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\EZMonitor.pdb
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\WebDriver.dll
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\WebDriver.Support.dll
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\WebDriver.xml
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\bin\Debug\WebDriver.Support.xml
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\obj\Debug\EZMonitor.csprojAssemblyReference.cache
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\obj\Debug\EZMonitor.csproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\obj\Debug\EZMonitor.csproj.CopyComplete
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\obj\Debug\EZMonitor.exe
+C:\Users\chris\source\repos\EZMonitor\EZMonitor\obj\Debug\EZMonitor.pdb
