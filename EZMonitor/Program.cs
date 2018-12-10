@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using OpenQA;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using DiscordWebhookLib;
 
 namespace EZMonitor
 {   
@@ -80,8 +81,9 @@ namespace EZMonitor
             chromeDriverService.HideCommandPromptWindow = true;
 
             driver = new ChromeDriver(chromeDriverService, options);
+            DiscordWebhookExecutor executor = new DiscordWebhookExecutor("https://discordapp.com/api/webhooks/521489301360476160/Ih8mNWpriqUpSsxCDFb9gVQElhLTMH-msLJSg7kgniycNf1nAxRVPyNqoerdez1QdXmh");
 
-            while(true)
+            while (true)
             {
                 foreach(string supremelink in SupremeLinks)
                 {                   
@@ -92,21 +94,22 @@ namespace EZMonitor
                         var ItemName = article.FindElement(By.TagName("p")).FindElement(By.ClassName("name-link")).Text;
                         var ItemColor = article.FindElement(By.TagName("h1")).FindElement(By.ClassName("name-link")).Text;
                         bool SoldOut = IsElementPresent(article);
+                        var ItemLink = article.FindElement(By.TagName("a")).GetAttribute("href");
 
                         SiteItem temp = new SiteItem(ItemName, ItemColor, SoldOut);
                         if(ExistsInList(temp))
                         {
                             int index = ItemList.FindIndex(a => a.Name == ItemName && a.Color == ItemColor);
                             bool oldSoldOut = ItemList[index].SoldOut;
-                                                       
-                            if(SoldOut != oldSoldOut)
+
+                            if (SoldOut != oldSoldOut)
                             {
                                 ItemList.RemoveAt(index);
                                 ItemList.Add(temp);
                                 if(!SoldOut)
                                 {
-                                    ColorLine("[RESTOCK] " + ItemName + " " + ItemColor, ConsoleColor.Green);
-                                    //INSERT EMAIL, DISCORD WEBHOOK, OR ANY OTHER NOTIFICATION HERE!
+                                    ColorLine("[RESTOCK] [" + DateTime.Now + "] " + ItemName + " " + ItemColor, ConsoleColor.Green);                                  
+                                    executor.Execute("[RESTOCK] [" + DateTime.Now + "] " + ItemName + " " + ItemColor + "Link: " + ItemLink, "EZMonitor", null, false, false);
                                 }
                                 else
                                 {
