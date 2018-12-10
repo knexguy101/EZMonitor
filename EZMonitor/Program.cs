@@ -81,7 +81,7 @@ namespace EZMonitor
             chromeDriverService.HideCommandPromptWindow = true;
 
             driver = new ChromeDriver(chromeDriverService, options);
-            DiscordWebhookExecutor executor = new DiscordWebhookExecutor("https://discordapp.com/api/webhooks/521489301360476160/Ih8mNWpriqUpSsxCDFb9gVQElhLTMH-msLJSg7kgniycNf1nAxRVPyNqoerdez1QdXmh");
+            DiscordWebhookExecutor executor = new DiscordWebhookExecutor("[Insert Webhook Link]");
 
             while (true)
             {
